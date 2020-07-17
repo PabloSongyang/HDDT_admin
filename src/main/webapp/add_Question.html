@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>互动答题3.0录题操作台</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">互动答题3.0录题操作台</h2>
+    <form class="form-horizontal" role="form">
+
+        <div class="form-group">
+            <label for="txtType" class="col-md-2 control-label">题目类别</label>
+            <div class="col-md-9">
+                <select id="txtType" class="form-control">
+                    <option>防疫</option>
+                    <option>火灾</option>
+                    <option>地震</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtTitle" class="col-md-2 control-label">题目名称</label>
+            <div class="col-md-9">
+                <input type="text" id="txtTitle" class="form-control" placeholder="请输入题目名称">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtTitle" class="col-md-2 control-label">选项A</label>
+            <div class="col-md-9">
+                <input type="text" id="txtA" class="form-control" placeholder="请输入A选项内容">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtTitle" class="col-md-2 control-label">选项B</label>
+            <div class="col-md-9">
+                <input type="text" id="txtB" class="form-control" placeholder="请输入B选项内容">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtTitle" class="col-md-2 control-label">选项C</label>
+            <div class="col-md-9">
+                <input type="text" id="txtC" class="form-control" placeholder="请输入C选项内容">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="txtTitle" class="col-md-2 control-label">选项D</label>
+            <div class="col-md-9">
+                <input type="text" id="txtD" class="form-control" placeholder="请输入D选项内容">
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+        <!--<label for="txtPhoto" class="col-md-2 control-label">商品样图</label>-->
+        <!--<div class="col-md-9">-->
+        <!--<input type="file" id="txtPhoto" class="form-control" accept="image/*">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+        <!--<div class="col-md-9 col-md-offset-2">-->
+        <!--<img class="" id="imgPhoto" width="150px">-->
+        <!--</div>-->
+        <!--</div>-->
+
+
+
+
+        <div class="form-group">
+            <label for="txtType" class="col-md-2 control-label">正确答案</label>
+            <div class="col-md-9">
+                <!-- <input type="text" id="txtType" class="form-control" placeholder="请输入图书名称">-->
+                <select id="txtOption" class="form-control">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- <label for="txtSummary" class="col-md-2 control-label">图书简介</label>-->
+            <div class="col-md-9 col-md-offset-2">
+                <!--<input type="text" class="form-control" placeholder="请输入图书名称">-->
+                <button type="button" id="btnAddVeg" class="btn btn-default">保存信息</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/layer-v3.1.1/layer/layer.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // var txtTitle = $('#txtTitle');
+        // var txtPhoto = $('#txtPhoto');
+        // var imgPhoto = $('#imgPhoto');
+        // var txtPrice = $('#txtPrice');
+        // var txtCostPrice = $('#txtCostPrice');
+        // var txtDiscount = $('#txtDiscount');
+        // var txtStock = $('#txtStock');
+        // var txtType = $('#txtType');
+        // var txtSummary = $('#txtSummary');
+        // var txtRule = $('#txtRule');
+        //
+        // var btnAddVeg = $('#btnAddVeg');
+        //
+        // txtPrice.on('input propertychange', function () {
+        //     if (checkNumber(0, $(this), '#txtPrice')) {
+        //         $(this).val(null);
+        //     }
+        // });
+        //
+        // txtCostPrice.on('input propertychange', function () {
+        //     if (checkNumber(0, $(this), '#txtCostPrice')) {
+        //         $(this).val(null);
+        //     }
+        // });
+        //
+        // txtStock.on('input propertychange', function () {
+        //     if (checkNumber(1, $(this), '#txtStock')) {
+        //         $(this).val(null);
+        //     }
+        // });
+        //
+        // function checkNumber(type, obj, selector) {
+        //     var focus = false;
+        //     var number;
+        //     switch (type) {
+        //         case 0:
+        //             number = new RegExp('^([0-9]*|d*\.d{1}?d*)$');
+        //             if (number.test(obj.val()))
+        //                 focus = false;
+        //             else {
+        //                 layer.tips('必须填非负浮点数', selector);
+        //                 focus = true;
+        //             }
+        //             break;
+        //         case 1:
+        //             number = new RegExp('^[0-9]*[1-9][0-9]*$');
+        //             if (number.test(obj.val()))
+        //                 focus = false;
+        //             else {
+        //                 layer.tips('必须填正整数', selector);
+        //                 focus = true;
+        //             }
+        //             break;
+        //     }
+        //     return focus;
+        // }
+        //
+        //
+        // txtCostPrice.blur(function () {
+        //
+        //     txtDiscount.val((parseInt(txtPrice.val()) / parseInt(txtCostPrice.val())).toFixed(2));
+        // });
+        //
+        // $.getJSON(
+        //     'ajax_veg_type/get_type_all',
+        //     function (data) {
+        //         if (data.code == 1) {
+        //             $.each(data.type, function (index, obj) {
+        //                 var option = $('<option></option>');
+        //                 option.val(obj.vid);
+        //                 option.text(obj.tname);
+        //                 txtType.append(option);
+        //             })
+        //         }
+        //     }
+        // );
+        //
+        // function setFormData(v1, v2, v3, v4, v5, v6, v7, v8, v9) {
+        //     var f = new FormData();
+        //     f.append('vname', v1);
+        //     f.append('photo', v2);
+        //     f.append('price', v3);
+        //     f.append('costprice', v4);
+        //     f.append('discount', v5);
+        //     f.append('stock', v6);
+        //     f.append('tid', v7);
+        //     f.append('summary', v8);
+        //     f.append('rule', v9)
+        //     return f;
+        // }
+        //
+        //
+        // btnAddVeg.click(function () {
+        //     if (txtTitle.val().length == 0 || txtPhoto[0] == null || txtPrice.val().length == 0 || txtCostPrice.val().length == 0 || txtStock.val().length == 0) {
+        //         layer.msg("信息不能为空", {icon: 5, time: 2000});
+        //         return
+        //     }
+        //     $.ajax({
+        //         url: 'ajax_vegetable/post_publish',
+        //         data: setFormData(
+        //             txtTitle.val(),
+        //             txtPhoto[0].files[0],
+        //             txtPrice.val(),
+        //             txtCostPrice.val(),
+        //             txtDiscount.val(),
+        //             txtStock.val(),
+        //             txtType[0].selectedIndex + 1,
+        //             txtSummary.val(),
+        //             txtRule.val()
+        //         ),
+        //         dataType: 'json',
+        //         type: 'POST',
+        //         processData: false,
+        //         contentType: false
+        //     }).done(function (data) {
+        //         if (data.code == 1031) {
+        //             layer.msg(data.msg, {icon: 1, time: 2000})
+        //         } else {
+        //             layer.msg(data.msg);
+        //         }
+        //     })
+        // })
+        //
+        // txtPhoto.change(function () {
+        //     var file = this.files[0];
+        //     var reader = new FileReader();
+        //     reader.onload = function (ev) {
+        //         imgPhoto.attr('src', ev.target.result);
+        //     };
+        //     reader.readAsDataURL(file)
+        // })
+    })
+</script>
+</html>
